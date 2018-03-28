@@ -9,7 +9,7 @@ public class Card
     //constructor
     public Card(int val, String sut, String rnk)
     {
-        this.value =  val;
+        this.value = val;
         this.suit = sut;   
         this.rank = rnk;
         

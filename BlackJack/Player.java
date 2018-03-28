@@ -16,7 +16,6 @@ public class Player
         this.money = mon;
         
         hand = new ArrayList<Card>(2);
-        
     }
     
     public void bet()
