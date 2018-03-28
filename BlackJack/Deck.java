@@ -1,24 +1,53 @@
 import java.util.ArrayList;
+
 public class Deck
 {
     //instance data
-    private ArrayList<Card> cards;//arrayList that stores all the cards
+    private ArrayList<Card> deck;//arrayList that stores all the cards
     
     public Deck()
     {
         //initializes arrayList
-        cards = new ArrayList<Card>(52);
+        deck = new ArrayList<Card>(52);
+        initialize();
     }
     
-    //method that initializes/resets the deck
-    public void initialize()
-    {
-        //list of values the cards will have
+    //list of values the cards will have
         int[] values = {1,2,3,4,5,6,7,8,9,10, 10, 10, 10};
         //list of suits the cards will have
         String[] suits = {"Spades", "Clubs", "Hearts", "Diamonds"};
         //list of ranks the cards will have
         String[] ranks = {"Ace", "Two", "Three", "Four", "Five", "Six", "Seven",
             "Eight", "Nine", "Ten", "Jack", "Queen", "King"};
+            
+    //method that initializes/resets the deck
+    public void initialize()
+    {       
+        //creates card template
+        Card temp;
+        //loops through the lists and creates a card with the list values
+        //as instance variables, in order.
+        for (int s = 0;  s < suits.length; s++)
+        {
+            for (int i = 0; i < values.length; i++)
+            {
+                temp = new Card(values[i], suits[s], ranks[i]);
+                deck.add(temp);
+            }
+        }
+    }
+    
+    //there does not need to be a shuffle method, as the deal method draws from
+    //the deck randomly!
+    public Card deal()
+    {
+        int i = (int)Math.random()*deck.size();
+        return deck.remove(i);
+    }
+    
+    //prints the deck
+    public void printDeck()
+    {
+        System.out.println(deck);
     }
 }

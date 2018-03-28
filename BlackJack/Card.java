@@ -27,7 +27,7 @@ public class Card
     
     public String toString()
     {
-        return "This is the " + this.value + " of " + this.suit + ".";
+        return "This is the " + this.rank + " of " + this.suit + ".";
     }
     
 }
