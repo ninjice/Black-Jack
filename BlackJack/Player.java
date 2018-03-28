@@ -1,33 +1,62 @@
+import java.util.ArrayList;
+import java.util.Scanner;
 
-/**
- * Write a description of class Player here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
 public class Player
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Player
-     */
-    public Player()
+    //instance variables
+    private String name;
+    private int money;
+    private int[] handTotal = {0, 0};
+    private ArrayList<Card> hand;
+    
+    public Player(String nm, int mon)
     {
         // initialise instance variables
-        x = 0;
+        this.name = nm;
+        this.money = mon;
+        
+        hand = new ArrayList<Card>(2);
+        
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    
+    public void bet()
     {
-        // put your code here
-        return x + y;
+        
+    }
+    
+    public void hit()
+    {
+        
+    }
+    
+    public void stay()
+    {
+        
+    }
+    
+    //calculates the hand total/s
+    public void calcHandTotal(){
+        for (Card c : hand)
+        {
+            handTotal[0] = 0;
+            handTotal[1] = 0;
+            //if there's an ace in the hand, it could count for either 1 or 11!
+            if (c.getValue() == 1)
+            {
+                handTotal[0] += 1;
+                handTotal[1] += 11;
+            }
+            else
+            {
+                handTotal[0] += c.getValue();
+                handTotal[1] += c.getValue();
+            }
+        }
+    }
+    
+    //returns handTotal
+    public int[] getHandTotal()
+    {
+        return handTotal;
     }
 }
