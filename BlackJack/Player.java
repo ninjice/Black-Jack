@@ -34,12 +34,12 @@ public class Player
     
     public void hit()
     {
-        
+        System.out.println(this.name + " has decided to hit.");
     }
     
     public void stay()
     {
-        
+        System.out.println(this.name + " has decided to stay.");
     }
     
     //calculates the hand total/s
