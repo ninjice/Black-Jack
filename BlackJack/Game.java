@@ -1,6 +1,7 @@
 import java.util.Scanner;
 public class Game
 {
+    
     public Game(int startingMoney)
     {
         //sets up scanner

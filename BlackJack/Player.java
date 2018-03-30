@@ -46,7 +46,8 @@ public class Player
     }
     
     //calculates the hand total/s
-    public void calcHandTotal(){
+    public void calcHandTotal()
+    {
         for (Card c : hand)
         {
             handTotal[0] = 0;
@@ -65,10 +66,27 @@ public class Player
         }
     }
     
+    //handTotal
+    public int getHandTotal()
+    {
+        //checks handTotal[1] first because it has the 11 value of an ace
+        //does not matter if there are no aces, because in that case
+        //handTotal[0] and handTotal[1] are identical
+        if (handTotal[0] <= 21)
+        {
+            return handTotal[1];
+        }
+        //if handTotal[1] goes over 21, returns the lesser of the two possible
+        //totals
+        return handTotal[0];
+        
+    }
+    
     //updates winnings
     public void updateWinnings(int amount)
     {
         this.money += amount;
+        
     }
     //returns handTotal
     public String toString()
