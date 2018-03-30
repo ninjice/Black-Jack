@@ -12,13 +12,16 @@ public class Player
     private int[] handTotal = {0, 0};
     private ArrayList<Card> hand;
     
-    public Player(String nm, int mon)
+    public Player(String nm, int mon, Card card1, Card card2)
     {
         // initialise instance variables
         this.name = nm;
         this.money = mon;
         
+        //sets up hand
         hand = new ArrayList<Card>(2);
+        hand.add(card1);
+        hand.add(card2);
     }
     
     public int bet()
@@ -62,6 +65,11 @@ public class Player
         }
     }
     
+    //updates winnings
+    public void updateWinnings(int amount)
+    {
+        this.money += amount;
+    }
     //returns handTotal
     public String toString()
     {

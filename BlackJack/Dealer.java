@@ -11,6 +11,6 @@ public class Dealer extends Player
     public Dealer()
     {
         // initialise instance variables
-        super();
+        super("Dealer", 1000);
     }
 }  

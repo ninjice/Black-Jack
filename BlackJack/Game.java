@@ -1,33 +1,25 @@
-
-/**
- * Write a description of class Game here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
+import java.util.Scanner;
 public class Game
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Game
-     */
-    public Game()
+    public Game(int startingMoney)
     {
-        // initialise instance variables
-        x = 0;
-    }
+        //sets up scanner
+        Scanner scan = new Scanner(System.in);
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+        //creates deck
+        Deck gameDeck = new Deck();
+        
+        //creates player class
+        System.out.println("What is your name?");
+        Player p1 = new Player(scan.nextLine(), startingMoney, gameDeck.deal(), gameDeck.deal());
+        
+        
+        
     }
+    
+    public static void play()
+    {
+        
+    }
+    
 }
