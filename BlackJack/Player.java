@@ -12,7 +12,7 @@ public class Player
     private int[] handTotal = {0, 0};
     private ArrayList<Card> hand;
     
-    public Player(String nm, int mon, Card card1, Card card2)
+    public Player(String nm, int mon)
     {
         // initialise instance variables
         this.name = nm;
@@ -20,6 +20,10 @@ public class Player
         
         //sets up hand
         hand = new ArrayList<Card>(2);
+    }
+    
+    public void initializeHand(Card card1, Card card2)
+    {
         hand.add(card1);
         hand.add(card2);
     }
