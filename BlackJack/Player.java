@@ -3,6 +3,9 @@ import java.util.Scanner;
 
 public class Player
 {
+    //Sets up the scanner
+    Scanner scan = new Scanner(System.in);
+    
     //instance variables
     private String name;
     private int money;
@@ -18,9 +21,15 @@ public class Player
         hand = new ArrayList<Card>(2);
     }
     
-    public void bet()
+    public int bet()
     {
+        //states how much money the player has and prompts them to enter
+        //the amount they would like to bet.
+        System.out.println("You currently have $" + this.money + 
+                            "How much would you like to bet?");
         
+        //returns the value the player wants to bet
+        return scan.nextInt();
     }
     
     public void hit()
@@ -54,8 +63,15 @@ public class Player
     }
     
     //returns handTotal
-    public int[] getHandTotal()
+    public String toString()
     {
-        return handTotal;
+        //returns different strings depending on whether or not there's an Ace in the player's hand
+        if (this.handTotal[0] == this.handTotal[1])
+        {
+            return this.name + " has " + this.hand + ", a hand worth " + this.handTotal[0] + "." ;
+        }
+        
+        return (this.name + " has " + this.hand + ", a hand worth either " +
+                this.handTotal[0] +  " or " + this.handTotal[1] + ".") ;
     }
 }
