@@ -26,6 +26,7 @@ public class Player
     {
         hand.add(card1);
         hand.add(card2);
+        calcHandTotal();
     }
     
     public int bet()
@@ -52,10 +53,10 @@ public class Player
     //calculates the hand total/s
     public void calcHandTotal()
     {
+        handTotal[0] = 0;
+        handTotal[1] = 0;
         for (Card c : hand)
         {
-            handTotal[0] = 0;
-            handTotal[1] = 0;
             //if there's an ace in the hand, it could count for either 1 or 11!
             if (c.getValue() == 1)
             {

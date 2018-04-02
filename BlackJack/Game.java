@@ -12,8 +12,8 @@ public class Game
         
         //creates player class
         System.out.println("What is your name?");
-        Player p1 = new Player(scan.nextLine(), startingMoney, gameDeck.deal(), gameDeck.deal());
-        
+        //Player p1 = new Player(scan.nextLine(), startingMoney, gameDeck.deal(), gameDeck.deal());
+        Player p1 = new Player(scan.nextLine(), startingMoney);
         
         
     }

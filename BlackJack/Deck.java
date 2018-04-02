@@ -23,6 +23,7 @@ public class Deck
     //method that initializes/resets the deck
     public void initialize()
     {       
+        deck = new ArrayList<Card>(52);
         //creates card template
         Card temp;
         //loops through the lists and creates a card with the list values
@@ -41,8 +42,8 @@ public class Deck
     //the deck randomly!
     public Card deal()
     {
-        int i = (int)Math.random()*deck.size();
-        return deck.remove(i);
+        //int i = (int)Math.random()*deck.size();
+        return deck.remove((int)Math.random()*deck.size() + 0);
     }
     
     //prints the deck
