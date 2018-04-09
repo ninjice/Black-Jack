@@ -42,10 +42,9 @@ public class Deck
     //there does not need to be a shuffle method, as the deal method draws from
     //the deck randomly!
     
-    
+    Random rand = new Random();
     public Card deal()
     {
-        Random rand = new Random();
         return deck.remove((int)rand.nextInt(deck.size()));
     }
     
