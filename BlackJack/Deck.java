@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.ArrayList;
 
 public class Deck
@@ -40,10 +41,12 @@ public class Deck
     
     //there does not need to be a shuffle method, as the deal method draws from
     //the deck randomly!
+    
+    
     public Card deal()
     {
-        //int i = (int)Math.random()*deck.size();
-        return deck.remove((int)Math.random()*deck.size() + 0);
+        Random rand = new Random();
+        return deck.remove((int)rand.nextInt(deck.size()));
     }
     
     //prints the deck

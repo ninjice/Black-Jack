@@ -6,7 +6,9 @@ public class Game
     {
         //sets up scanner
         Scanner scan = new Scanner(System.in);
-
+        
+        //sets up dealer
+        
         //creates deck
         Deck gameDeck = new Deck();
         
