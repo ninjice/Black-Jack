@@ -29,20 +29,36 @@ public class Player
         calcHandTotal();
     }
     
-    public int bet()
+    public int bet(int minBet)
     {
-        //states how much money the player has and prompts them to enter
-        //the amount they would like to bet.
-        System.out.println("You currently have $" + this.money + 
-                            "How much would you like to bet?");
+        int betAmount = 0;
+        
+        //there is a chance the player will try to bet less than the minimum bet, if this is the case, they will be repeatedly asked to enter another value until the amount
+        //they enter is above the minimum bet
+        while (betAmount < minBet){
+            //states how much money the player has, the minimum bet and prompts them to enter
+            //the amount they would like to bet.
+            System.out.println("You currently have $" + this.money + 
+                            ". How much would you like to bet?(minimum bet is " +
+                            minBet + ")");
+            betAmount = scan.nextInt();
+            //if the amount is under the min bet
+            if (betAmount < minBet){
+                System.out.println("That is too little.");
+            }
+            
+        }
+        //subtracts the amount they are betting from their current money
+        this.money -= betAmount;
         
         //returns the value the player wants to bet
-        return scan.nextInt();
+        return betAmount;
     }
     
     public void hit()
     {
         System.out.println(this.name + " has decided to hit.");
+        
     }
     
     public void stay()
@@ -105,4 +121,5 @@ public class Player
         return (this.name + " has " + this.hand + ", a hand worth either " +
                 this.handTotal[0] +  " or " + this.handTotal[1] + ".") ;
     }
+    
 }

@@ -1,23 +1,19 @@
 
-public class Driver
-{
-    
-
+public class Driver{
     public static void Main()
     {
-        Deck deck = new Deck();
-        //deck.deal();
-        
-        Player p = new Player("Jay", 1000);
+        Player p = new Player("Jay", 10000);
         
         Dealer dave = new Dealer();
         
-        p.initializeHand(deck.deal(), deck.deal());
+        //p.initializeHand(deck.deal(), deck.deal());
         
-        dave.initializeHand(deck.deal(), deck.deal());
+        //dave.initializeHand(deck.deal(),deck.deal());
             
         System.out.println(p);
         System.out.println(dave);
         
+        p.bet(1000);
+        p.bet(1000);
     }
 }

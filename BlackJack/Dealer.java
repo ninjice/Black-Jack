@@ -11,7 +11,7 @@ public class Dealer extends Player
     //private ArrayList<Card> hand;
     public Dealer()
     {
-        super("Dealer", 100000);
+        super("Dealer", 1000000);
         //hand = new ArrayList<Card>(2);
         hand = new Card[3];
     }
