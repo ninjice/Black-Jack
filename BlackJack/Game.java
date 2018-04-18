@@ -16,8 +16,6 @@ public class Game
         //initializes instance variable 
         this.minimumBet = minBet;
         
-        //sets up dealer
-        
         //creates deck
         gameDeck = new Deck();
         
@@ -29,13 +27,17 @@ public class Game
         //creates dealer
         d = new Dealer();
         
+        //begins the game
         play();
+        
+        //determines the winner
+        determineWinner();
     }
     
     public void play()
     {
         //asks the player to place a bet
-        p1.bet(this.minimumBet);
+        this.bettingBox = p1.bet(this.minimumBet);
         
         //initializes the player's hand
         p1.addCard(gameDeck.deal());
@@ -60,7 +62,6 @@ public class Game
         {
             //gives player a new card
             p1.hit();
-            
         }
         else
         {
@@ -69,7 +70,17 @@ public class Game
         //player's turn ends
         
         //dealer's turn begins
-        //if (d.getHandTotal
+        if (d.getHandTotal() < 17)
+        {
+            d.hit();
+            d.addCard(gameDeck.deal());
+        }
+        else
+        {
+            d.stay();
+        }
+        //dealer's turn ends
+        
     }
     
     public void determineWinner()
