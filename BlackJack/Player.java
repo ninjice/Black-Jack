@@ -22,13 +22,6 @@ public class Player
         hand = new ArrayList<Card>(2);
     }
     
-    public void initializeHand(Card card1, Card card2)
-    {
-        this.hand.add(card1);
-        this.hand.add(card2);
-        calcHandTotal();
-    }
-    
     public int bet(int minBet)
     {
         int betAmount = 0;
@@ -55,10 +48,15 @@ public class Player
         return betAmount;
     }
     
-    public void hit(Card c)
+    public void hit()
     {
         System.out.println(this.name + " has decided to hit.");
+    }
+    
+    public void addCard(Card c)
+    {
         this.hand.add(c);
+        calcHandTotal();
     }
     
     public void stay()

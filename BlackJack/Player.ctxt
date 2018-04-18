@@ -2,12 +2,12 @@
 comment0.target=Player
 comment1.params=nm\ mon
 comment1.target=Player(java.lang.String,\ int)
-comment2.params=card1\ card2
-comment2.target=void\ initializeHand(Card,\ Card)
-comment3.params=minBet
-comment3.target=int\ bet(int)
+comment2.params=minBet
+comment2.target=int\ bet(int)
+comment3.params=
+comment3.target=void\ hit()
 comment4.params=c
-comment4.target=void\ hit(Card)
+comment4.target=void\ addCard(Card)
 comment5.params=
 comment5.target=void\ stay()
 comment6.params=

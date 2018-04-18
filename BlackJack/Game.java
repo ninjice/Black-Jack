@@ -38,10 +38,12 @@ public class Game
         p1.bet(this.minimumBet);
         
         //initializes the player's hand
-        p1.initializeHand(gameDeck.deal(), gameDeck.deal());
+        p1.addCard(gameDeck.deal());
+        p1.addCard(gameDeck.deal());
         
         //initializes the dealer's hand
-        d.initializeHand(gameDeck.deal(), gameDeck.deal());
+        d.addCard(gameDeck.deal());
+        d.addCard(gameDeck.deal());
         
         System.out.println(d);
         //reveals the dealer's up card, or the first card in the dealer's hand
@@ -50,20 +52,24 @@ public class Game
         //shows the player their hand and its total value
         System.out.println(p1);
         
-        //gives the player two options
+        //player's turn begins
         System.out.println("What would you like to do? " + "/n" + "0: Hit" + "/n" + "1: Stay");
         
         //if player hits:
         if (scan.nextInt() == 0)
         {
             //gives player a new card
-            p1.hit(gameDeck.deal());
+            p1.hit();
+            
         }
         else
         {
             p1.stay();
         }
+        //player's turn ends
         
+        //dealer's turn begins
+        //if (d.getHandTotal
     }
     
     public void determineWinner()
