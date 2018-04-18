@@ -2,9 +2,10 @@ import java.util.Scanner;
 public class Game
 {
     //instance variables
-    private int minimumBet;
     private Player p1;
     private Dealer d;
+    private Deck gameDeck;
+    private int minimumBet;
     private int bettingBox;
     public Game(int startingMoney, int minBet)
     {
@@ -17,7 +18,7 @@ public class Game
         //sets up dealer
         
         //creates deck
-        Deck gameDeck = new Deck();
+        gameDeck = new Deck();
         
         //creates player class
         System.out.println("What is your name?");
@@ -35,8 +36,23 @@ public class Game
         //asks the player to place a bet
         p1.bet(this.minimumBet);
         
+        //initializes the player's hand
+        p1.initializeHand(gameDeck.deal(), gameDeck.deal());
         
+        //initializes the dealer's hand
+        d.initializeHand(gameDeck.deal(), gameDeck.deal());
+        
+        System.out.println(d);
+        //reveals the dealer's up card, or the first card in the dealer's hand
+        System.out.println("The dealer's upcard is " + d.getUpCard() + ".");
         
     }
     
+    public void determineWinner()
+    {
+        
+    }
+    
+    public void endGame()
+    {}
 }

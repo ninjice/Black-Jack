@@ -7,18 +7,18 @@ public class Dealer extends Player
     private int money;
     private int[] handTotal = {0, 0};
     //private ArrayList<Card> dealersHand = new ArrayList<Card>(2);
-    private Card[] hand;
+    private ArrayList<Card> hand;
     //private ArrayList<Card> hand;
     public Dealer()
     {
-        super("Dealer", 1000000);
-        //hand = new ArrayList<Card>(2);
-        hand = new Card[3];
+        super("Dealer", 0);
+        hand = new ArrayList<Card>(0);
+        //hand = new Card[3];
     }
     
     public Card getUpCard()
     {
-        return hand[0];
+        return this.hand.get(0);
     }
     
     public void offerInsuranceBet()

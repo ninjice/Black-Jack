@@ -24,8 +24,8 @@ public class Player
     
     public void initializeHand(Card card1, Card card2)
     {
-        hand.add(card1);
-        hand.add(card2);
+        this.hand.add(card1);
+        this.hand.add(card2);
         calcHandTotal();
     }
     
