@@ -55,10 +55,10 @@ public class Player
         return betAmount;
     }
     
-    public void hit()
+    public void hit(Card c)
     {
         System.out.println(this.name + " has decided to hit.");
-        
+        this.hand.add(c);
     }
     
     public void stay()
@@ -69,20 +69,20 @@ public class Player
     //calculates the hand total/s
     public void calcHandTotal()
     {
-        handTotal[0] = 0;
-        handTotal[1] = 0;
+        this.handTotal[0] = 0;
+        this.handTotal[1] = 0;
         for (Card c : hand)
         {
             //if there's an ace in the hand, it could count for either 1 or 11!
             if (c.getValue() == 1)
             {
-                handTotal[0] += 1;
-                handTotal[1] += 11;
+                this.handTotal[0] += 1;
+                this.handTotal[1] += 11;
             }
             else
             {
-                handTotal[0] += c.getValue();
-                handTotal[1] += c.getValue();
+                this.handTotal[0] += c.getValue();
+                this.handTotal[1] += c.getValue();
             }
         }
     }
@@ -93,13 +93,13 @@ public class Player
         //checks handTotal[1] first because it has the 11 value of an ace
         //does not matter if there are no aces, because in that case
         //handTotal[0] and handTotal[1] are identical
-        if (handTotal[0] <= 21)
+        if (this.handTotal[1] > 21)
         {
-            return handTotal[1];
+            return this.handTotal[1];
         }
         //if handTotal[1] goes over 21, returns the lesser of the two possible
         //totals
-        return handTotal[0];
+        return this.handTotal[0];
         
     }
     
@@ -109,7 +109,7 @@ public class Player
         this.money += amount;
         
     }
-    //returns handTotal
+    
     public String toString()
     {
         //returns different strings depending on whether or not there's an Ace in the player's hand

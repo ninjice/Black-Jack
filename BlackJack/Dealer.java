@@ -18,7 +18,7 @@ public class Dealer extends Player
     
     public Card getUpCard()
     {
-        return this.hand.get(0);
+        return this.hand.get(1);
     }
     
     public void offerInsuranceBet()
