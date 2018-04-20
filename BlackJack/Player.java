@@ -72,7 +72,7 @@ public class Player
         for (Card c : hand)
         {
             //if there's an ace in the hand, it could count for either 1 or 11!
-            if (c.getValue() == 1)
+            if (c.getValue() == 1) 
             {
                 this.handTotal[0] += 1;
                 this.handTotal[1] += 11;
@@ -107,6 +107,7 @@ public class Player
         this.money += amount;
         
     }
+    
     
     public String toString()
     {
