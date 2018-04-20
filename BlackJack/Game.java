@@ -82,33 +82,30 @@ public class Game
         //player's turn ends
         
         
-        //dealer's turn begins
-        
-        
-        
-        //dealer hits until their hand totals 17, or if they bust
-        while (d.getHandTotal() < 17) 
+        //if the player didn't bust, dealer's turn begins
+        if (p1.getHandTotal() <= 21)
         {
+            
+            //dealer hits until their hand totals 17, or if they bust
+            while (d.getHandTotal() < 17) 
+            {
+            //shows the player their hand and its total value
+            System.out.println(p1);
+            
             //when they get a new card
             d.hit();
             d.addCard(gameDeck.deal());
             
-            //shows the player their hand and its total value
-            System.out.println(p1);
-            
             //tells the player if the dealer busts, and then ends the dealer's turn
             if (p1.getHandTotal() > 21)
             {
-                System.out.print(" They have busted!");
+                System.out.print(" The dealer has busted!");
                 break;
             }
             
-            //if the player did not bust, they are given the two options again
-            System.out.println("What would you like to do? " + "\n" + 
-            "0: Hit" + "\n" + "1: Stay");
+            }
+            //dealer's turn ends
         }
-        //dealer's turn ends
-        
     }
     
     public void determineWinner()
