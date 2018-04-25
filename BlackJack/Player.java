@@ -10,7 +10,7 @@ public class Player
     private String name;
     private int money;
     private int[] handTotal = {0, 0};
-    private ArrayList<Card> hand;
+    protected ArrayList<Card> hand;
     
     public Player(String nm, int mon)
     {
@@ -18,7 +18,11 @@ public class Player
         this.name = nm;
         this.money = mon;
         
-        //sets up hand
+        //hand is initialized by Game class
+    }
+    
+    public void initializeHand()
+    {
         hand = new ArrayList<Card>(2);
     }
     
@@ -104,10 +108,10 @@ public class Player
     //updates winnings
     public void updateWinnings(int amount)
     {
+        System.out.println(this.name + " wins!");
         this.money += amount;
         
     }
-    
     
     public String toString()
     {

@@ -1,9 +1,7 @@
 #BlueJ class context
 comment0.target=Dealer
-comment1.params=
-comment1.target=Dealer()
+comment1.params=money
+comment1.target=Dealer(int)
 comment2.params=
 comment2.target=Card\ getUpCard()
-comment3.params=
-comment3.target=void\ offerInsuranceBet()
-numComments=4
+numComments=3
