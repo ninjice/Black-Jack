@@ -23,12 +23,6 @@ public class Game
         
         //creates dealer
         d = new Dealer(0);
-        
-        //begins the game
-        play();
-        
-        //determines the winner
-        determineWinner();
     }
     
     public void play()
@@ -108,6 +102,7 @@ public class Game
             }
             //dealer's turn ends
         }
+    
     }
     
     //takes two boolean parameters, if either of them busted, doesn't bother
@@ -161,6 +156,8 @@ public class Game
     }
     
     public void endGame()
-    {}
+    {
+        System.out.println("Thanks for playing!");
+    }
 }
 
