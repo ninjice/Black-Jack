@@ -73,8 +73,12 @@ public class Game
             //if the player did not bust, they are given the two options again
             System.out.println("What would you like to do? " + "\n" + 
             "0: Hit" + "\n" + "1: Stay");
+            if(scan.nextInt() == 1)
+            {
+                p1.stay();
+            }
         }
-        p1.stay();
+        
         //player's turn ends
         
         

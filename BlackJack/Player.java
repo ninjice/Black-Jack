@@ -95,7 +95,7 @@ public class Player
         //checks handTotal[1] first because it has the 11 value of an ace
         //does not matter if there are no aces, because in that case
         //handTotal[0] and handTotal[1] are identical
-        if (this.handTotal[1] > 21)
+        if (this.handTotal[1] <= 21)
         {
             return this.handTotal[1];
         }
