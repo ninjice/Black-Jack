@@ -73,12 +73,12 @@ public class Game
             //if the player did not bust, they are given the two options again
             System.out.println("What would you like to do? " + "\n" + 
             "0: Hit" + "\n" + "1: Stay");
-            if(scan.nextInt() == 1)
+        }
+        
+        if (p1.getHandTotal() <= 21)
             {
                 p1.stay();
             }
-        }
-        
         //player's turn ends
         
         
@@ -89,22 +89,25 @@ public class Game
             //dealer hits until their hand totals 17, or if they bust
             while (d.getHandTotal() < 17) 
             {
-                //shows the player their hand and its total value
-                System.out.println(p1);
-            
                 //when they get a new card
                 d.hit();
                 d.addCard(gameDeck.deal());
-            
+                System.out.println(d);
                 //tells the player if the dealer busts, and then ends the dealer's turn
-                if (p1.getHandTotal() > 21)
+                if (d.getHandTotal() > 21)
                 {
                     System.out.print(" The dealer has busted!");
                     break;
                 }
             
             }
+            
+            if(d.getHandTotal() <= 21)
+            {
+                d.stay();
+            }
             //dealer's turn ends
+            
         }
     
     }
@@ -150,11 +153,19 @@ public class Game
             }
             
             //if dealer's hand is higher
-            else
+            else if (p1.getHandTotal() < d.getHandTotal())
             {
                 //dealer wins the money that the player bet
                 d.updateWinnings(bettingBox);
             
+            }
+            //if they tied
+            else
+            {
+                //player wins back their bet
+                System.out.println("It's a tie!");
+                p1.updateWinnings(bettingBox);
+                System.out.print(" (You get the money you put in.)");
             }
         }
     }
